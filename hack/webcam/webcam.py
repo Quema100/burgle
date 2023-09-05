@@ -14,10 +14,11 @@ def webcam():
                 print("Can't receive frame (stream end?). Exiting ...")
                 break
 
-                # Our operations on the frame come here
-            gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+            #dst = cv.resize(frame, dsize=(640, 480), interpolation=cv.INTER_AREA)
+            # Our operations on the frame come here
+            #gray = cv.cvtColor(dst, cv.COLOR_BGR2GRAY)
             # Display the resulting frame
-            cv.imshow('Webcam',gray)
+            cv.imshow('Webcam',frame)
 
             if cv.waitKey(1)  & 0xFF == ord('q'):
                 print('Exit')
