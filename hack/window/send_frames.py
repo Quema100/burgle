@@ -16,7 +16,7 @@ async def send_frames(websocket, path):
 
             await websocket.send(png_data)
         except Exception as e:
-            print(f"Error: {str(e)}")
+            print(f"Window Error: {str(e)}")
             break
         except KeyboardInterrupt:
             print("Connection closed")
