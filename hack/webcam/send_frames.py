@@ -1,4 +1,3 @@
-import asyncio
 import websockets
 import cv2
 

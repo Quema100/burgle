@@ -2,45 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>WebSocket Video Stream</title>
+    <title>Window Stream</title>
+    <link href="/css/window.css" rel="stylesheet">
+    <script src ="/js/window.js"></script>
 </head>
 <body>
     <img id="video" alt="Video Stream">
-
-    <script>
-        let socket;
-
-        window.onload = () => {
-            socket = new WebSocket('ws://localhost:8765');
-
-            socket.onopen = (event) => {
-                console.log('WebSocket connection opened.');
-            };
-
-            socket.onmessage = (event) => {
-                const blob = new Blob([event.data], { type: 'image/png' });
-                const imgUrl = URL.createObjectURL(blob);
-                document.getElementById('video').src = imgUrl;
-            };
-
-            socket.onclose = (event) => {
-                if (event.wasClean) {
-                    console.log(`WebSocket connection closed cleanly, code=${event.code}, reason=${event.reason}`);
-                } else {
-                    console.error('WebSocket connection died');
-                }
-            };
-
-            socket.onerror = (error) => {
-                console.error(`WebSocket error: ${error.message}`);
-            };
-        };
-
-        window.onbeforeunload = () => {
-            if (socket) {
-                socket.close();
-            }
-        };
-    </script>
 </body>
 </html>

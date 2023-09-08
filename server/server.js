@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const window = require('./router/window')
 const webcam = require('./router/webcam')
-
+const voice = require('./router/voice')
 const main = require('./router/mine')
 const port = 3000;
 
@@ -27,6 +27,8 @@ app.get('/', (req, res) => {
 
 window(app,path)
 webcam(app,path)
+voice(app,path)
+main(app,path)
 //app.use((req, res, next) => {
   //res.status(404).sendFile(path.join(__dirname, './html', '404.html'));
 //});

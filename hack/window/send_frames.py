@@ -1,5 +1,4 @@
 from PIL import ImageGrab
-import asyncio
 import websockets
 import cv2
 import numpy as np
