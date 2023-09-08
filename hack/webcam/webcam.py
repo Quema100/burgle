@@ -35,5 +35,3 @@ def webcam():
     # When everything done, release the capture
     cap.release()
     cv.destroyAllWindows()
-
-webcam()
