@@ -1,8 +1,8 @@
 let socket;
 
 window.onload = () => {
-    socket = new WebSocket('ws://localhost:8765');
-
+    socket = new WebSocket('ws://localhost:8767');
+    socket.binaryType = "arraybuffer";
     socket.onopen = (event) => {
         console.log('WebSocket connection opened.');
     };
@@ -10,7 +10,7 @@ window.onload = () => {
     socket.onmessage = (event) => {
         const audioBlob = new Blob([event.data], { type: 'audio/wav' }); // 오디오 형식에 맞게 타입 설정
         const audioUrl = URL.createObjectURL(audioBlob);
-        document.querySelector('audio').src = audioUrl;
+        document.getElementById('audioPlayer').src = audioUrl;
     };
 
     socket.onclose = (event) => {
