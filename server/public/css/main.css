@@ -3,27 +3,29 @@ body{
     background: #2c2c2c;
     overflow: hidden;
 }
+/* ----main---- */
+#main{
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+}
+
+#main > h1{
+    color: #b8b8b8; 
+}
 /* ----Button Style---- */
 #button{
     text-align: center;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex; 
     align-items: center;
     justify-content: center; 
 }
 
 #button > .window{
-    width: 150px;
-    height: 65px;
-    margin-right: 10px; 
-    float: left; 
-    display: flex; 
-    align-items: center;
-    justify-content: center; 
-}
-
-#button > .voice{
+    border: 2px solid #b8b8b8; 
+    border-radius: 25px; 
     width: 150px;
     height: 65px;
     margin-right: 10px; 
@@ -34,6 +36,20 @@ body{
 }
 
 #button > .webcam{
+    border: 2px solid #b8b8b8; 
+    border-radius: 25px; 
+    width: 150px;
+    height: 65px;
+    margin-right: 10px; 
+    float: left; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+}
+
+#button > .voice{
+    border: 2px solid #b8b8b8; 
+    border-radius: 25px; 
     width: 150px;
     height: 65px;
     margin-right: 10px; 
@@ -44,6 +60,8 @@ body{
 }
 
 #button > .keylogger{
+    border: 2px solid #b8b8b8; 
+    border-radius: 25px; 
     width: 150px;
     height: 65px;
     float: left; 
@@ -52,19 +70,51 @@ body{
     justify-content: center; 
 }
 /* <a>  text-decoration: none; */
+
 #button > .window > a{
     color: aliceblue;
+    transition: 0.3s ease;
     text-decoration: none;
 }
-#button > .voice > a{
-    color: aliceblue;
-    text-decoration: none;
-}
+
 #button > .webcam > a{
     color: aliceblue;
+    transition: 0.3s ease;
     text-decoration: none;
 }
+
+#button > .voice > a{
+    color: aliceblue;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
 #button > .keylogger > a{
     color: aliceblue;
+    transition: 0.3s ease;
     text-decoration: none;
+}
+
+/* ----<a> hover---- */
+#button > .window > a:hover{
+    transition: 0.3s ease;
+    font-size: larger;
+    color: #fff;
+}
+
+#button > .webcam > a:hover{
+    transition: 0.3s ease;
+    font-size: larger;
+    color: #fff;
+}
+
+#button > .voice > a:hover{
+    transition: 0.3s ease;
+    font-size: larger;
+    color: #fff;}
+
+#button > .keylogger > a:hover{
+    transition: 0.3s ease;
+    font-size: larger;
+    color: #fff;
 }
