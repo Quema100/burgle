@@ -1,0 +1,48 @@
+html{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-use-select: none;
+    user-select: none;
+}
+
+body{
+    margin: 0;
+    background: #2c2c2c;
+    overflow: hidden;
+}
+/* ----audio div---- */
+#audio{
+    width: 100%;
+    height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+audio{
+    display: none;
+}
+/* ----text---- */
+#divStream{
+    justify-content: center;
+    align-items: center;
+}
+
+#divStream > a{
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
+/* ----animation---- */
+@keyframes blank {
+    0%{
+        opacity: 1;
+    }50%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
