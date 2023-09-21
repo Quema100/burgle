@@ -17,12 +17,28 @@ window.onload = () => {
     };
 
     socket.onmessage = (event) => {
-        stream.textContent  = 'Voice Streaming...'
+        stream.style.animation = null;
+        stream.textContent  = 'Voice Streaming'
+        stream.textContent += '.'
+        setTimeout(()=>{
+            if(stream.textContent === 'Voice Streaming.'){
+                stream.textContent += '.'
+            }
+        },300)
 
-        if (stream.textContent === 'Voice Streaming...') {
-            stream.style.animation = '2s blank infinite';
-        }
-        
+        setTimeout(()=>{
+            if(stream.textContent === 'Voice Streaming..'){
+                stream.textContent += '.'
+            }
+        },600)
+
+
+        setTimeout(()=>{
+            if(stream.textContent === 'Voice Streaming...'){
+                stream.textContent  = 'Voice Streaming'
+            }
+        },900)
+
         const floatArray = new Float32Array(event.data);
 
         const audioBuffer = audioContext.createBuffer(2, floatArray.length / 2, audioContext.sampleRate);
@@ -50,11 +66,9 @@ window.onload = () => {
         if (event.wasClean) {
             console.log(`WebSocket connection closed cleanly, code=${event.code}, reason=${event.reason}`);
             stream.textContent  = 'WebSocket connection closed cleanly'
-            stream.style.animation = null;
         } else {
             console.error('WebSocket connection died');
             stream.textContent  = 'WebSocket connection died'
-            stream.style.animation = null;
         }
     };
 
