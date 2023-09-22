@@ -17,11 +17,8 @@ window.onload = () => {
     };
 
     socket.onmessage = (event) => {
-        stream.textContent  = 'Voice Streaming...'
-
-        if (stream.textContent === 'Voice Streaming...') {
-            stream.style.animation = '2s blank infinite';
-        }
+        stream.innerHTML  = 'Voice Streaming<span class="circle" id="circle1"></span><span class="circle" id="circle2"></span><span class="circle" id="circle3"></span>'
+        stream.style.animation = null;
         
         const floatArray = new Float32Array(event.data);
 
