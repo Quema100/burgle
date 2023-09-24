@@ -1,5 +1,6 @@
 import websockets
 import cv2
+import sys
 
 async def send_frames(websocket, path):
     cap = cv2.VideoCapture(0)
@@ -24,5 +25,6 @@ async def send_frames(websocket, path):
     except KeyboardInterrupt:
         print("Connection closed")
         cap.release()
+        sys.exit(0)
     except websockets.exceptions.ConnectionClosedOK:
         pass 
