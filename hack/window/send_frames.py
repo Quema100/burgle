@@ -7,8 +7,6 @@ async def send_frames(websocket, path):
     while True:
         try:
             screenshot = cv2.cvtColor(np.array(ImageGrab.grab()), cv2.COLOR_RGB2BGR)
-            screenshot = cv2.resize(screenshot, (1520, 710))
-
             
             _, buffer = cv2.imencode('.png', screenshot)
             png_data = buffer.tobytes()
