@@ -3,6 +3,7 @@ let socket;
 window.onload = () => {
     socket = new WebSocket('ws://localhost:8766');
     const stream = document.getElementById('Stream')
+    const img = document.getElementById('video')
     stream.textContent  = 'WebSocket connection is pending'
 
     socket.onopen = (event) => {
@@ -20,8 +21,12 @@ window.onload = () => {
     socket.onclose = (event) => {
         if (event.wasClean) {
             console.log(`WebSocket connection closed cleanly, code=${event.code}, reason=${event.reason}`);
+            img.style.display = 'none'
+            stream.textContent  = 'WebSocket connection closed cleanly'
         } else {
             console.error('WebSocket connection died');
+            img.style.display = 'none'
+            stream.textContent  = 'WebSocket connection died'
         }
     };
 

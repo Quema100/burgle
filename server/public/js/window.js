@@ -22,8 +22,12 @@ window.onload = () => {
     socket.onclose = (event) => {
         if (event.wasClean) {
             console.log(`WebSocket connection closed cleanly, code=${event.code}, reason=${event.reason}`);
+            video.style.display = 'none'
+            stream.textContent  = 'WebSocket connection closed cleanly'
         } else {
             console.error('WebSocket connection died');
+            video.style.display = 'none'
+            stream.textContent  = 'WebSocket connection died'
         }
     };
 

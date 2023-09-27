@@ -23,7 +23,7 @@ audio{
     display: none;
 }
 /* ----text---- */
-#audio > #divStream > #Stream{
+#audio > #Stream{
     color: aliceblue;
     text-align: center;
     display: flex;
@@ -32,13 +32,13 @@ audio{
     align-items: center;
 }
 
-#audio > #divStream > a > .circle{
+#audio > a > .circle{
     width: 5px; 
     height: 5px; 
     float: left; 
 }
 
-#audio > #divStream > a > #circle1 {
+#audio > a > #circle1 {
     border-radius: 50%; 
     margin-left: 10px;
     margin-right: 5px; 
@@ -51,7 +51,7 @@ audio{
     animation-delay: 0.3s;
 }
 
-#audio > #divStream > a > #circle2 {
+#audio > a > #circle2 {
     border-radius: 50%; 
     margin-left: 5px;
     margin-right: 5px; 
@@ -64,7 +64,7 @@ audio{
     animation-delay: 0.5s;
 }
 
-#audio > #divStream > a > #circle3 {
+#audio > a > #circle3 {
     border-radius: 50%; 
     margin-left: 5px;
     margin-right: 5px; 
