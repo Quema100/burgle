@@ -3,12 +3,15 @@
 1. First:
     - click `<code>`
   
-    ![First](./img/downloadtip1.png)
+    ![First][def1]
 
 2. second:
     - click `Download ZIP`
 
-    ![Second](./img/downloadtip2.png)
+    ![Second][def2]
 
 3. third:
     - Extract the downloaded file.
+
+[def1]: ./img/downloadtip1.png
+[def2]: ./img/downloadtip2.png
