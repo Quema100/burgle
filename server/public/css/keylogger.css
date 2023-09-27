@@ -1,0 +1,38 @@
+html{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-use-select: none;
+    user-select: none;
+}
+
+body{
+    margin: 0;
+    background: #2c2c2c;
+    overflow: hidden;
+}
+/* ----keylogger---- */
+#keylogger{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+#keylogger::-webkit-scrollbar{
+    width: 10px;
+}
+
+#keylogger::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 5px;
+}
+
+#keylogger::-webkit-scrollbar-thumb{
+    height: 10%;
+    background: #383838;
+    border-radius: 30px;
+}
+/* ----ul---- */
+#keylogger > #log-list{
+    list-style: none;
+    color: aliceblue;
+}
