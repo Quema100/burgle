@@ -7,8 +7,8 @@
 
 2. second:
     - click `Download ZIP`
-    
-            ![Second][def2]
+
+        ![Second][def2]
 
 3. third:
     - Extract the downloaded file.
