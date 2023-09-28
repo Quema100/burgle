@@ -1,14 +1,14 @@
 # Download Tip
 
 1. First:
-    - click `<code>`
+    - click `<> code `
   
-    ![First][def1]
+        ![First][def1]
 
 2. second:
     - click `Download ZIP`
 
-    ![Second][def2]
+        ![Second][def2]
 
 3. third:
     - Extract the downloaded file.
