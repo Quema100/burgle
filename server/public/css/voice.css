@@ -18,8 +18,8 @@ body{
     justify-content: center;
     align-items: center;
 }
-
-audio{
+/* ---audio */
+#audio > #audioElement{
     display: none;
 }
 /* ----text---- */
