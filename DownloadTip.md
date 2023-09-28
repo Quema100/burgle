@@ -2,10 +2,12 @@
 
 1. First:
     - click `<> code `
+
         ![First][def1]
 
 2. second:
     - click `Download ZIP`
+    
             ![Second][def2]
 
 3. third:
