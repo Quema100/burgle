@@ -1,7 +1,7 @@
-PyAudio 0.2.13
-opencv-python 4.8.0.76
-pynput 1.7.6
-numpy 1.25.2
-Pillow 10.0.0
-websockets 11.0.3
-Python 3.11.5
+PyAudio == 0.2.13
+opencv-python == 4.8.0.76
+pynput == 1.7.6
+numpy == 1.25.2
+Pillow == 10.0.0
+websockets == 11.0.3
+Python == 3.11.5
