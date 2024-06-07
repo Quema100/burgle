@@ -4,4 +4,4 @@ pynput == 1.7.6
 numpy == 1.25.2
 Pillow == 10.0.0
 websockets == 11.0.3
-Python == 3.11.5
+Python 3.11.5
